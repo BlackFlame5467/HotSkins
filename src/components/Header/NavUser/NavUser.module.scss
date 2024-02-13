@@ -1,0 +1,11 @@
+.nav__user {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+}
+.changeLang__item::before {
+	display: block;
+	content: url(../../../img/header/ru.svg);
+	width: 16px;
+	height: 16px;
+}
