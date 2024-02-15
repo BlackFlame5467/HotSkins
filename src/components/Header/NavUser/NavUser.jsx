@@ -1,28 +1,51 @@
 import React from "react"
-import styles from "./NavUser.module.scss"
+import styles from "./NavUser.scss"
 import Btn from "../../Btn/Btn"
+import Select from "react-select"
+import { useState } from "react"
+import { components } from "react-select"
 
 import ru from "./../../../img/header/ru.svg"
 import en from "./../../../img/header/en.svg"
 import ukr from "./../../../img/header/ukr.svg"
 
+const options = [
+	{
+		value: "ru",
+		label: "RU",
+		image: { ru },
+	},
+	{
+		value: "urk",
+		label: "UKR",
+		image: { ukr },
+	},
+	{
+		value: "en",
+		label: "EN",
+		image: { en },
+	},
+]
+
 const NavUser = () => {
+	const [currentValue, setValue] = useState("ru")
+
+	const onChange = newValue => {
+		setValue(newValue.value)
+	}
+
+	const getValue = () => {
+		return currentValue ? options.find(v => v.value === currentValue) : ""
+	}
 	return (
-		<div className={styles.nav__user}>
-			<select className={styles.changeLang} name="select-category">
-				<option value="1" className={styles.changeLang__item}>
-					<img src={ru} alt="" />
-					<h3 className={styles.changeLang__title}>RU</h3>
-				</option>
-				<option value="2" className={styles.changeLang__item}>
-					<img src={en} alt="" />
-					<h3 className={styles.changeLang__title}>EN</h3>
-				</option>
-				<option value="3" className={styles.changeLang__item}>
-					<img src={ukr} alt="" />
-					<h3 className={styles.changeLang__title}>UKR</h3>
-				</option>
-			</select>
+		<div className="nav__user">
+			<Select
+				classNamePrefix="nav__select"
+				options={options}
+				isSearchable={false}
+				value={getValue()}
+				onChange={onChange}
+			/>
 			<Btn title={"Войти"} />
 		</div>
 	)
