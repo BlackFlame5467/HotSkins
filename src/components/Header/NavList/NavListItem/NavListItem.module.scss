@@ -1,3 +1,8 @@
 .nav__link {
-    color: #fff;
+	color: #fff;
+	transition: color 0.3s ease-in;
+
+	&:hover {
+		color: #f4c038;
+	}
 }

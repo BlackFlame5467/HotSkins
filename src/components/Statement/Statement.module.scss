@@ -1,0 +1,45 @@
+.statement {
+	min-height: 87vh;
+	background: #20222a;
+	padding: 142px 0 0 0;
+
+	&__content {
+		display: flex;
+		gap: 130px;
+		align-items: center;
+		img {
+			padding: 55px 0 0 0;
+		}
+	}
+	&__title {
+		font-size: 32px;
+		font-weight: 500;
+		line-height: 40px;
+		color: #fff;
+		margin: 0 0 32px 0;
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	&__textarea {
+		resize: none;
+		height: 105px;
+		border: 1px solid rgb(61, 69, 84);
+		border-radius: 24px;
+		padding: 16px 0 0 24px;
+		color: #fff;
+	}
+	&__btn {
+		font-weight: 500;
+		font-size: 16px;
+		color: #20222a;
+		padding: 14px 24px;
+		background: #f4c038;
+		border-radius: 48px;
+		width: 200px;
+	}
+}

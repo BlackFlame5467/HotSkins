@@ -3,31 +3,27 @@ import styles from "./NavUser.scss"
 import Btn from "../../Btn/Btn"
 import Select from "react-select"
 import { useState } from "react"
-import { components } from "react-select"
+import { Link } from "react-router-dom"
 
-import ru from "./../../../img/header/ru.svg"
-import en from "./../../../img/header/en.svg"
-import ukr from "./../../../img/header/ukr.svg"
-
-const options = [
-	{
-		value: "ru",
-		label: "RU",
-		image: { ru },
-	},
-	{
-		value: "urk",
-		label: "UKR",
-		image: { ukr },
-	},
-	{
-		value: "en",
-		label: "EN",
-		image: { en },
-	},
-]
+// import ru from "./../../../img/header/ru.svg"
+// import en from "./../../../img/header/en.svg"
+// import ukr from "./../../../img/header/ukr.svg"
 
 const NavUser = () => {
+	const options = [
+		{
+			value: "ru",
+			label: "RU",
+		},
+		{
+			value: "urk",
+			label: "UKR",
+		},
+		{
+			value: "en",
+			label: "EN",
+		},
+	]
 	const [currentValue, setValue] = useState("ru")
 
 	const onChange = newValue => {
@@ -46,7 +42,9 @@ const NavUser = () => {
 				value={getValue()}
 				onChange={onChange}
 			/>
-			<Btn title={"Войти"} />
+			<Link to="login">
+				<Btn title={"Войти"} />
+			</Link>
 		</div>
 	)
 }

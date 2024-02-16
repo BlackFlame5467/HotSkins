@@ -7,10 +7,16 @@
 	border-radius: 48px;
 }
 .header__btn {
-    font-weight: 500;
+	font-weight: 500;
 	font-size: 16px;
 	color: #20222a;
 	background: #f4c038;
 	border-radius: 48px;
 	padding: 22px 40px;
+}
+.btnHover {
+	transition: background 0.3s ease-in;
+	&:hover {
+		background: #a78328;
+	}
 }
